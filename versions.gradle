@@ -1,0 +1,90 @@
+ext.deps = [:]
+def versions = [:]
+
+versions.annotation = "1.0.2"
+versions.appcompat = "1.0.2"
+versions.core_ktx = "1.0.2"
+versions.recyclerview = "1.0.0"
+versions.constraint_layout = "2.0.0-beta1"
+versions.lifecycle = "2.1.0-beta01"
+versions.navigation = "2.0.0"
+versions.material = "1.0.0" //old design
+
+versions.kotlin = "1.3.31"
+versions.dagger = "2.23.1"
+versions.retrofit = "2.5.0"
+versions.gson = "2.8.5"
+versions.okhttp3 = "3.12.3"
+
+
+def support = [:]
+support.annotations = "androidx.annotation:annotation:$versions.annotation"
+support.app_compat = "androidx.appcompat:appcompat:$versions.appcompat"
+support.core_ktx = "androidx.core:core-ktx:$versions.core_ktx"
+support.recyclerview = "androidx.recyclerview:recyclerview:$versions.recyclerview"
+support.design = "com.google.android.material:material:$versions.material"
+deps.support = support
+
+deps.constraint_layout = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
+
+
+def navigation = [:]
+navigation.runtime = "androidx.navigation:navigation-runtime:$versions.navigation"
+navigation.runtime_ktx = "androidx.navigation:navigation-runtime-ktx:$versions.navigation"
+navigation.fragment = "androidx.navigation:navigation-fragment:$versions.navigation"
+navigation.fragment_ktx = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+navigation.ui = "androidx.navigation:navigation-ui:$versions.navigation"
+navigation.ui_ktx = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+navigation.safe_args_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+deps.navigation = navigation
+
+def lifecycle = [:]
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+lifecycle.java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
+lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+//lifecycle.reactiveStreams = "androidx.lifecycle:lifecycle-reactivestreams:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+kotlin.allopen = "org.jetbrains.kotlin:kotlin-allopen:$versions.kotlin"
+
+deps.kotlin = kotlin
+
+//third parties
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+//retrofit.rxjava_adapter = "com.squareup.retrofit2:adapter-rxjava:$versions.retrofit"
+//retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
+deps.retrofit = retrofit
+
+def okhttp3 = [:]
+okhttp3.runtime = "com.squareup.okhttp3:okhttp:$versions.okhttp3"
+okhttp3.logging = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3"
+deps.okhttp3 = okhttp3
+
+
+def dagger = [:]
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
+dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+
+deps.dagger = dagger
+
+deps.gson = "com.google.code.gson:gson:$versions.gson"
+
+
+ext.deps = deps
+
+def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+ext.addRepos = this.&addRepos

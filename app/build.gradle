@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-allopen'
+
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.jangleproducerkt"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding { enabled = true }
+    androidExtensions { experimental = true }
+    buildTypes {
+        buildTypes {
+            debug {
+                minifyEnabled false
+            }
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+
+    dependencies {
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        implementation deps.support.app_compat
+        implementation deps.support.recyclerview
+        implementation deps.support.core_ktx
+        implementation deps.support.design
+        implementation deps.constraint_layout
+        implementation deps.navigation.fragment_ktx
+
+        implementation deps.lifecycle.runtime
+        implementation deps.lifecycle.extensions
+        implementation deps.lifecycle.java8
+
+        implementation deps.retrofit.runtime
+        implementation deps.retrofit.gson
+
+        implementation deps.okhttp3.runtime
+        implementation deps.okhttp3.logging
+
+        implementation deps.gson
+
+
+        implementation deps.dagger.runtime
+        implementation deps.dagger.android
+        implementation deps.dagger.android_support
+        kapt deps.dagger.compiler
+        kapt deps.dagger.android_support_compiler
+
+        implementation deps.kotlin.stdlib
+
+
+
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    }
+}

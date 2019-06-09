@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:ignore="MergeRootFrame"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <fragment
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:navGraph="@navigation/main"
+            app:defaultNavHost="true"
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+</FrameLayout>
+
+
+
+<!--
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".ui.view.MainActivity"
+>
+    <data>
+        <variable
+                name="handlers"
+                type="com.example.jangleproducerkt.ui.view.FragmentHandler"/>
+    </data>
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:background="@color/colorPrimary"
+    >
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+
+            <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:id="@+id/openCreateUserFragment"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_width="170dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:textAllCaps="false"
+                    android:text="Create User(s)"
+                    android:onClick="@{(v) -> handlers.onOpenCreateUsers(v)}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                     xmlns:tools="http://schemas.android.com/tools"
+                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                     tools:ignore="MergeRootFrame"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent">
+
+            <fragment
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    app:navGraph="@navigation/main"
+                    app:defaultNavHost="true"
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>-->

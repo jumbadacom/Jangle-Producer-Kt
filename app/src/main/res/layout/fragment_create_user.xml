@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="handler"
+                type="com.example.jangleproducerkt.ui.view.fragments.CreateUserFragmentHandler"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="@color/colorFragCreateUser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/btnCreateUser"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:textAllCaps="false"
+                android:text="Create User(s)"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.google.android.material.button.MaterialButton
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/btnOpenProfile"
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:textAllCaps="false"
+                android:text="Open Profile"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnCreateUser"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
